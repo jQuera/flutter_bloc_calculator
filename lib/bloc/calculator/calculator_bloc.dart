@@ -80,10 +80,36 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
 
     switch (state.operation) {
       case '+':
-        emit(state.copyWith(
-          secondNumber: state.mathResult,
-          mathResult: '${num1 + num2}',
-        ));
+        emit(
+          state.copyWith(
+            secondNumber: state.mathResult,
+            mathResult: '${num1 + num2}',
+          ),
+        );
+        break;
+      case '-':
+        emit(
+          state.copyWith(
+            secondNumber: state.mathResult,
+            mathResult: '${num1 - num2}',
+          ),
+        );
+        break;
+      case '/':
+        emit(
+          state.copyWith(
+            secondNumber: state.mathResult,
+            mathResult: '${num1 / num2}',
+          ),
+        );
+        break;
+      case 'X':
+        emit(
+          state.copyWith(
+            secondNumber: state.mathResult,
+            mathResult: '${num1 * num2}',
+          ),
+        );
         break;
       default:
         emit(state);
